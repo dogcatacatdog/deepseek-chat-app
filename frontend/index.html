@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle Lion Chatting</title>
+    <link rel="stylesheet" href="../frontend/css/styles.css">
+</head>
+<body>
+    <div class="outer-container">
+        <div class="container">
+            <main class="chat-main">
+                <div id="chat-box" class="chat-messages">
+                    <!-- Chat messages will appear here -->
+                </div>
+            </main>
+            <div class="input-container">
+                <form id="chat-form">
+                    <input 
+                        id="message-input" 
+                        type="text" 
+                        placeholder="Enter your message" 
+                        required 
+                        autocomplete="off"
+                    />
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../frontend/js/app.js"></script>
+</body>
+</html>

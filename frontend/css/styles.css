@@ -1,0 +1,138 @@
+/* General body styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+.outer-container {
+    display: flex;
+    justify-content: center; /* 가로 방향 가운데 정렬 */
+    align-items: center; /* 세로 방향 가운데 정렬 */
+    height: 100vh; /* 화면 전체 높이 */
+    width: 100vw; /* 화면 전체 너비 */
+    background-image: url('jungle.png'); /* jungle.png를 배경으로 설정 */
+    background-size: cover; /* 배경 이미지를 화면에 맞게 조정 */
+    background-position: center; /* 배경 이미지를 가운데 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+}
+
+/* Container for the chat app */
+.container {
+    width: 100%;
+    max-width: 600px; /* Centered chat box with a max width */
+    margin: auto;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6); /* White background with 0.6 transparency for the chat container */
+    border-radius: 10px; /* Rounded corners for the chat container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Header styling */
+.header {
+    background: #0078d7; /* Blue header to match the sample */
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Chat box styling */
+#chat-box {
+    background: rgba(33, 196, 120, 0.6); /* Light green background with 0.6 transparency for the chat area */
+    padding: 20px;
+    height: calc(100vh - 160px); /* Adjust height dynamically */
+    overflow-y: auto; /* Enable scrolling for long chats */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add spacing between messages */
+}
+
+/* Message styling */
+.message {
+    max-width: 60%; /* Limit message width */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word; /* Ensure long words break properly */
+}
+
+.message.user {
+    background: #ffee58; /* Yellow background for user messages */
+    color: #000000; /* Black text for contrast */
+    align-self: flex-end; /* Align user messages to the right */
+    text-align: right;
+}
+
+.message.bot {
+    background: #ffffff; /* White background for bot messages */
+    color: #000000; /* Black text for bot messages */
+    align-self: flex-start; /* Align bot messages to the left */
+    text-align: left;
+    border: 1px solid #dddddd; /* Add a subtle border for bot messages */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align the image and text vertically */
+    gap: 10px; /* Add spacing between the image and text */
+}
+
+.message.bot::before {
+    content: "";
+    width: 35px; /* Set the size of the image */
+    height: 35px;
+    background-image: url('lion.png'); /* Path to the lion image */
+    background-size: cover; /* Ensure the image covers the circle */
+    background-position: center; /* Center the image */
+    border-radius: 50%; /* Make the image circular */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+/* Input area styling */
+.input-container {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    min-height: 80px;
+    display: flex;
+    padding: 5px 10px; /* 위아래 여백을 여기서 처리 */
+    background-color: #e0f7fa;
+    align-items: center;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.input-container input[type="text"] {
+    flex: 1 1 auto;
+    width : 45vw;
+    height: 100%; /* 부모 패딩을 뺀 내부 높이 확보 */
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 20px; /* 버튼 공간 확보 */
+    box-sizing: border-box;
+}
+
+
+/* Send button styling */
+.input-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #225f09; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #303f9f; /* Darker blue on hover */
+}
