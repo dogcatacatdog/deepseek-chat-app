@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageInput = document.getElementById('message-input');
     const chatBox = document.getElementById('chat-box');
 
+    // 수정수정
     // Form submission event listener
     chatForm.addEventListener('submit', function(event) {
         event.preventDefault();
